@@ -7,7 +7,7 @@ app.use(express.bodyParser());
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'jade');
 
-app.listen(80);
+app.listen(process.env.PORT || 3000);
 
 function get_redis_connection() {
   if (process.env.REDISTOGO_URL) {
