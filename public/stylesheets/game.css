@@ -1,0 +1,31 @@
+#dancefloor {
+  height: 500px;
+}
+
+.dancer {
+  width: 120px;
+  float: left;
+}
+
+.user {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 120px;
+}
+
+.left {
+  background-image: url('/images/left.jpg')
+}
+
+.up {
+  background-image: url('/images/up.jpg')
+}
+
+.right {
+  background-image: url('/images/right.jpg')
+}
+
+.hi {
+  background-image: url('/images/hi.jpg')
+}

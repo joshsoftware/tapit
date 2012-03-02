@@ -1,0 +1,42 @@
+script
+  $(document).ready(function() {
+      var socket = io.connect("http://192.168.1.153:3000");
+      var content = $('#content');
+
+      socket.on('connect', function() {
+          console.log('connected');
+          socket.emit('publish', 'game.#{gameid}.user',
+            JSON.stringify({nick: "#{nick}", ts: Date.now() })
+          );
+      });
+
+      socket.on('message', function(message, data){
+          content.prepend(message + '<br />' + data);
+      }) ;
+
+      socket.on('disconnect', function() {
+          console.log('disconnected');
+          content.html("<b>Disconnected!</b>");
+      });
+
+
+      $("#subscribe").submit(function() {
+        socket.emit('psubscribe', $('#subscribe #channel').val());
+        return false;
+      });
+
+      $(".action").click(function() {
+        socket.emit('publish', 'game.#{gameid}.action.' + $(this).data('action'), 
+           JSON.stringify({ nick: "#{nick}", ts: Date.now() })
+        );
+        return false;
+      });
+
+  });
+  
+h2 Yo mama! Welcome #{nick}
+
+.action(data-action="left") Left
+.action(data-action="right") Right
+.action(data-action="up") Up
+.action(data-action="hi") Hi

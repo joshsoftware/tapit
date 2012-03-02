@@ -1,0 +1,41 @@
+script
+  $(document).ready(function() {
+      var socket = io.connect("http://192.168.1.153:3000");
+      var content = $('#content');
+
+      socket.on('connect', function() {
+          console.log('connected');
+          content.html("<b>Connected!</b>");
+      });
+
+      socket.on('message', function(message){
+          content.prepend(message + '<br />');
+      }) ;
+
+      socket.on('disconnect', function() {
+          console.log('disconnected');
+          content.html("<b>Disconnected!</b>");
+      });
+
+
+      $("#subscribe").submit(function() {
+        socket.emit('psubscribe', $('#subscribe #channel').val());
+        return false;
+      });
+
+      $("#publish").submit(function() {
+        socket.emit('publish', $('#publish #channel').val(), "I am here");
+        return false;
+      });
+
+  });
+
+#{name}
+form#subscribe(action="#")
+  input#channel(type="input")
+  input(type="submit")
+  
+form#publish(action="#")
+  input#channel(type="input")
+  input(type="submit")
+#content
