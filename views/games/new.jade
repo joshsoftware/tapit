@@ -6,14 +6,13 @@ script
 
   function process_action(action, data) {
     nick = $("#dancefloor #" + data.nick);
-    console.log(nick);
 
     // action is an array ['event string', 'group1'], so we need action[1]
     nick.attr('class', 'user').addClass(action[1]);
   }
 
   $(document).ready(function() {
-      var socket = io.connect("http://192.168.1.153:3000");
+      var socket = io.connect("http://#{HOST}:#{PORT}");
       var dancefloor = $('#dancefloor');
 
       socket.on('connect', function() {

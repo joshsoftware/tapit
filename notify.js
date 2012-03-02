@@ -1,3 +1,10 @@
+/** CONFIGURATION **/
+
+HOST = "192.168.1.153",
+PORT = "3000"
+
+/** CONFIGURATION **/
+
 var express = require('express')
   , app = express.createServer()
   , redis = require('redis')
@@ -7,7 +14,7 @@ app.use(express.bodyParser());
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'jade');
 
-app.listen(3000);
+app.listen(PORT);
 
 const DB = redis.createClient();
 
@@ -16,7 +23,9 @@ app.get('/', function(req, res) {
 });
 
 app.get('/games/new', function (req, res) {
-  data = { gameid: Math.random().toString(36).substring(12) }
+  data = { HOST: HOST, PORT: PORT,
+          gameid: Math.random().toString(36).substring(12) 
+  }
 
   // Create the game in DB
   DB.sadd('games', data['gameid']);
@@ -28,7 +37,8 @@ app.get('/game/:gameid/:nick', function (req, res) {
     res.send("No such game", 404);
   else {
     DB.sadd(req.params.gameid, req.params.nick)
-    params = { gameid: req.params.gameid,
+    params = { HOST: HOST, PORT: PORT,
+               gameid: req.params.gameid,
                nick: req.params.nick,
                ts: Date.now()
     }
