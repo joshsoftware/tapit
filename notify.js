@@ -52,7 +52,7 @@ app.get('/game/:gameid/:nick', function (req, res) {
 // Special Heroku - disable WebSockets!
 io.configure(function () { 
   io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
+  io.set("polling duration", 1); 
 });
 
 io.sockets.on('connection', function(socket) {
