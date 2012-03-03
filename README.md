@@ -21,26 +21,28 @@ Redis Pubsub - Wildcard Push Notification support
 
 ## Setting it up
 
-Install [node](http://nodejs.org)
-Install [npm](http://npmjs.org)
-Install [Redis](http://redis.io)
+Install [node](http://nodejs.org), [npm](http://npmjs.org) and [Redis](http://redis.io).
+Install the node modules when you clone this directory.
 
     npm install
 
-Because we have the package.json it will automatically install the relevant npm modules.
+Because we have the package.json it will automatically installs the dependant npm modules.
 
 Playing the game
 ----------------
 
     $ node notify.js
 
-### Start new game!
+* Create a new game! [http://localhost:3000/games/new](http://localhost:3000/games/new)
+* When a new game is created, it gets a unique id. 
+* To join a game, use that unique id and a nick. http://host:port/game/:game_id/:nick
+* If 'gautam' wants to join the game id 'rxd3d', use http://localhost:3000/game/rxd3d/gautam. 
 
-[http://localhost:3000/games/new](http://localhost:3000/games/new)
+Contributing
+------------
 
-### Join a game
-
-When a new game is created, it spews out a *unique* URL. To join a game, open the url in a new browser window. Be sure to add your own nick in the URL! 
+I have used the smurf cartoons and the game is PRETTY basic. 
+Feel free to fork and add more dance moves - Yeah!
 
 Enjoy!
 
