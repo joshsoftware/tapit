@@ -1,6 +1,7 @@
 /** CONFIGURATION **/
 
-HOST = "192.168.1.153",
+//HOST = "192.168.1.153",
+HOST = "localhost",
 PORT = "3000"
 
 /** CONFIGURATION **/
