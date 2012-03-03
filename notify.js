@@ -11,6 +11,8 @@ var express = require('express')
   , redis = require('redis')
   , io = require('socket.io').listen(app);
 
+io.set('log level', 1); // reduce logging
+
 app.use(express.bodyParser());
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'jade');
@@ -49,7 +51,6 @@ app.get('/game/:gameid/:nick', function (req, res) {
 
 
 io.sockets.on('connection', function(socket) {
-  console.log("connected..");
   const subscribe = redis.createClient();
   const publish = redis.createClient();
 
@@ -58,7 +59,6 @@ io.sockets.on('connection', function(socket) {
   });
 
   socket.on('psubscribe', function(channel) {
-    console.log('subscribe: ' + channel);
     subscribe.psubscribe(channel);
   });
 
