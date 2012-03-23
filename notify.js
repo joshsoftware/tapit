@@ -2,7 +2,7 @@
 
 //HOST = "192.168.1.153",
 HOST = "localhost",
-PORT = "3000"
+PORT = "3001"
 
 /** CONFIGURATION **/
 
@@ -36,19 +36,25 @@ app.get('/games/new', function (req, res) {
 });
 
 app.get('/game/:gameid/:nick', function (req, res) {
-  if (!DB.sismember('games', req.params.gameid))
-    res.send("No such game", 404);
-  else {
-    DB.sadd(req.params.gameid, req.params.nick)
-    params = { HOST: HOST, PORT: PORT,
-               gameid: req.params.gameid,
-               nick: req.params.nick,
-               ts: Date.now()
-    }
-    res.render('games/join', params);
-  }
-});
+  DB.sismember('games', req.params.gameid, function(err, data) {
 
+    // Game Not found
+    if (!data) return res.send(404);
+
+    // Strip special characters
+    nick = req.params.nick.replace(/\W/g, '')
+    DB.sismember(req.params.gameid, nick, function(err, data) {
+      // Add the new member to the game
+      DB.sadd(req.params.gameid, nick);
+      params = { HOST: HOST, PORT: PORT,
+                gameid: req.params.gameid,
+                nick: nick,
+                ts: Date.now()
+      }
+      res.render('games/join', params);
+    });
+  });
+});
 
 io.sockets.on('connection', function(socket) {
   const subscribe = redis.createClient();

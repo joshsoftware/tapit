@@ -1,31 +1,102 @@
+body {
+  background: #ffffff url('/images/dancefloor4.jpg') repeat right top;
+}
+
+h1.title {
+  margin-top: 50px;
+  color: #ffffff;
+  text-align: center;
+}
+
 #dancefloor {
-  height: 500px;
+}
+
+.action {
+  -webkit-box-shadow: rgba(255, 255, 255, 0.199219) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.046875) 0px 1px 2px 0px;
+  -webkit-transition-delay: 0s;
+  -webkit-transition-duration: 0.10000000149011612s;
+  -webkit-transition-property: background-position;
+  -webkit-transition-timing-function: linear;
+  background-color: #05C;
+  background-image: -webkit-linear-gradient(top, #08C, #05C);
+  background-position: 0px -15px;
+  background-repeat: repeat-x;
+  border-bottom-color: rgba(0, 0, 0, 0.246094);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(0, 0, 0, 0.0976563);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(0, 0, 0, 0.0976563);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(0, 0, 0, 0.0976563);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-shadow: rgba(255, 255, 255, 0.199219) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.046875) 0px 1px 2px 0px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  height: 24px;
+  line-height: normal;
+  margin-bottom: 3px;
+  margin-left: 3px;
+  margin-right: 10px;
+  margin-top: 3px;
+  outline-color: white;
+  outline-style: none;
+  outline-width: 0px;
+  padding-bottom: 14px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 14px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: rgba(0, 0, 0, 0.246094) 0px -1px 0px;
+  vertical-align: middle;
+  width: 206px;
 }
 
 .dancer {
-  width: 120px;
+  width: 180px;
+  height: 320px;
   float: left;
+  margin: 2px;
+}
+
+.nickname {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #fc0;
 }
 
 .user {
   background-position: 0 0;
   background-repeat: no-repeat;
-  width: 120px;
-  height: 120px;
+  height: 320px;
+  width: 180px;
 }
 
 .left {
-  background-image: url('/images/left.jpg')
+  background-image: url('/images/fido-clap1.png')
 }
 
 .up {
-  background-image: url('/images/up.jpg')
+  background-image: url('/images/fido-up1.png')
 }
 
 .right {
-  background-image: url('/images/right.jpg')
+  background-image: url('/images/fido-guitar1.png')
 }
 
 .hi {
-  background-image: url('/images/hi.jpg')
+  background-image: url('/images/fido-drums1.png')
 }
