@@ -35,13 +35,13 @@ Playing the game
 
 * Create a new game! [http://localhost:3000/games/new](http://localhost:3000/games/new)
 * When a new game is created, it gets a unique id. 
-* To join a game, use that unique id and a nick. http://host:port/game/:game_id/:nick
-* If 'gautam' wants to join the game id 'rxd3d', use http://localhost:3000/game/rxd3d/gautam. 
+* To join a game, http://host:port/game/:game_id/start
+* Enter your handle.
+* Dance your heart you!
 
 Contributing
 ------------
 
-I have used the smurf cartoons and the game is PRETTY basic. 
 Feel free to fork and add more dance moves - Yeah!
 
 Enjoy!
