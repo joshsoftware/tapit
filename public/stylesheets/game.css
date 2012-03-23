@@ -11,6 +11,63 @@ h1.title {
 #dancefloor {
 }
 
+form {
+  width: 270px;
+}
+
+form input[type="text"] {
+  -webkit-appearance: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.0742188) 0px 1px 1px 0px inset;
+  -webkit-rtl-ordering: logical;
+  -webkit-transition-delay: 0s, 0s;
+  -webkit-transition-duration: 0.20000000298023224s, 0.20000000298023224s;
+  -webkit-transition-property: border, box-shadow;
+  -webkit-transition-timing-function: linear, linear;
+  -webkit-user-select: text;
+  background-color: white;
+  border-bottom-color: #CCC;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: #CCC;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: #CCC;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: #CCC;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-shadow: rgba(0, 0, 0, 0.0742188) 0px 1px 1px 0px inset;
+  color: #555;
+  cursor: auto;
+  display: inline-block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  height: 38px;
+  letter-spacing: normal;
+  line-height: 32px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 4px;
+  text-align: -webkit-auto;
+  text-indent: 0px;
+  text-shadow: none;
+  text-transform: none;
+  vertical-align: middle;
+  width: 270px;
+  word-spacing: 0px;
+}
+
 .action {
   -webkit-box-shadow: rgba(255, 255, 255, 0.199219) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.046875) 0px 1px 2px 0px;
   -webkit-transition-delay: 0s;

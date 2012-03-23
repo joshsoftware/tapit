@@ -2,7 +2,7 @@ script
   function add_user(data) {
     // TODO: Should use some template here!
     if (!$("#" + data.nick).length) 
-      $('#dancefloor').prepend("<div class='dancer'><div class='nickname'>" + data.nick + "</div><div class='user hi' id='" + data.nick + "'></div></div>");
+      $('#dancefloor').append("<div class='dancer'><div class='nickname'>" + data.nick + "</div><div class='user hi' id='" + data.nick + "'></div></div>");
   }
 
   function process_action(action, data) {
@@ -40,7 +40,7 @@ script
       });
   });
 
-h1.title http://#{HOST}:#{PORT}/game/#{gameid}/:nickname
+h1.title http://#{HOST}:#{PORT}/game/#{gameid}/start
 
 #dancefloor
 

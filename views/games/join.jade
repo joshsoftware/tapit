@@ -32,11 +32,22 @@ script
         return false;
       });
 
+      $('body').keyup(function(e) {
+         if(e.keyCode == 37){ //left
+          $(".action[data-action='left']").trigger('click'); 
+         }else if(e.keyCode == 38){ // up
+          $(".action[data-action='up']").trigger('click');
+         }else if(e.keyCode == 39){ // right
+          $(".action[data-action='right']").trigger('click');
+         }else if(e.keyCode == 40){ // down
+          $(".action[data-action='hi']").trigger('click');
+         }
+      });
   });
   
 h1.title Dance #{nick}, Dance!
 
-.action(data-action="left") Clap Your Hands
-.action(data-action="right") Play the Guitar
-.action(data-action="up") Jump! Jump!
-.action(data-action="hi") Play the Drums
+.action(data-action="left") Clap Your Hands (&larr;)
+.action(data-action="right") Play the Guitar (&rarr;)
+.action(data-action="up") Jump! Jump! (&uarr;)
+.action(data-action="hi") Play the Drums (&darr;)
