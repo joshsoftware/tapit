@@ -39,6 +39,8 @@ Playing the game
 * Enter your handle.
 * Dance your heart you!
 
+And if you wanted a live demo - here you are http://tapit.nodejitsu.com 
+
 Contributing
 ------------
 
