@@ -1,6 +1,6 @@
 script
   $(document).ready(function() {
-      var socket = io.connect("http://#{HOST}:#{PORT}");
+      var socket = io.connect("#{HOST}");
       var content = $('#content');
 
       socket.on('connect', function() {

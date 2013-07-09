@@ -1,12 +1,18 @@
 {
+  "subdomain": "tapit",
   "name": "TapIt",
-  "version": "0.0.1",
+  "version": "0.0.1-5",
   "dependencies": {
     "express": "2.5.8",
     "redis": "0.7.1",
-    "hiredis": "0.1.13",
     "formidable": "1.0.8",
     "jade": "0.20.3",
     "socket.io": "0.8.5"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "0.8.x"
   }
 }

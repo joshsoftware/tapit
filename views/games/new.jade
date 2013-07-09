@@ -13,7 +13,7 @@ script
   }
 
   $(document).ready(function() {
-      var socket = io.connect("http://#{HOST}:#{PORT}");
+      var socket = io.connect("#{HOST}");
       var dancefloor = $('#dancefloor');
 
       socket.on('connect', function() {
@@ -40,7 +40,7 @@ script
       });
   });
 
-h1.title http://#{HOST}:#{PORT}/game/#{gameid}/start
+h1.title #{HOST}/game/#{gameid}/start
 
 #dancefloor
 
